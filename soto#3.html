@@ -1,0 +1,1976 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soto Tauco Talang Tegal - Beranda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d35400;
+            --secondary-color: #f39c12;
+            --accent-color: #27ae60;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --text-color: #333;
+            --text-light: #777;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+
+        /* Page Content */
+        .page-content {
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('backgroundmenu.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-color);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-icon {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-icon i {
+            font-size: 8rem;
+            color: var(--primary-color);
+            opacity: 0.8;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+
+        .menu-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .order-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 0.5rem;
+        }
+
+        .order-btn:hover {
+            background-color: #219653;
+            transform: translateY(-2px);
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--light-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--primary-color);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial h4 {
+            color: var(--primary-color);
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Menu Categories */
+        .menu-categories {
+            background-color: var(--light-color);
+            padding: 2rem 0;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-tab {
+            padding: 0.8rem 1.5rem;
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .category-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .category-tab:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Menu Hero */
+        .menu-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .menu-hero h1 {
+            font-size: 3rem;
+            color: white;
+        }
+
+        /* Special Offers */
+        .special-offers {
+            background-color: var(--light-color);
+        }
+
+        .offer-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .offer-badge {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        /* About Hero */
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1563379091339-03246963d96f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            color: white;
+        }
+
+        /* History Section */
+        .history {
+            background-color: var(--light-color);
+        }
+
+        .history-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .history-text {
+            flex: 2;
+        }
+
+        .history-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .history-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .value-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Team Section */
+        .team {
+            background-color: var(--light-color);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--primary-color);
+        }
+
+        /* Gallery Hero */
+        .gallery-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1563379091339-03246963d96f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .gallery-hero h1 {
+            font-size: 3rem;
+            color: white;
+        }
+
+        /* Gallery Filter */
+        .gallery-filter {
+            background-color: var(--light-color);
+            padding: 2rem 0;
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-tab {
+            padding: 0.8rem 1.5rem;
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .filter-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .filter-tab:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Gallery Items */
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 2rem 1rem 1rem;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .gallery-overlay p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Video Section */
+        .video-section {
+            background-color: var(--light-color);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 3rem;
+        }
+
+        .video-content {
+            padding: 1.5rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-prev, .lightbox-next {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 1rem;
+            transition: var(--transition);
+        }
+
+        .lightbox-prev:hover, .lightbox-next:hover {
+            color: var(--primary-color);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            padding: 0.5rem;
+        }
+
+        /* Location Hero */
+        .location-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1586016413664-864c0dd76f53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .location-hero h1 {
+            font-size: 3rem;
+            color: white;
+        }
+
+        /* Location Info */
+        .location-info {
+            background-color: var(--light-color);
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .info-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .info-card h3 {
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card h3 i {
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .contact-item i {
+            width: 30px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light-color);
+        }
+
+        .hour-item:last-child {
+            border-bottom: none;
+        }
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .facility-item {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--light-color);
+            border-radius: 5px;
+        }
+
+        .facility-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0;
+        }
+
+        .map-container {
+            height: 500px;
+            position: relative;
+        }
+
+        .map {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 300px;
+        }
+
+        .map-overlay h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Directions Section */
+        .directions {
+            background-color: var(--light-color);
+        }
+
+        .transport-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .transport-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .transport-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .route-steps {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .route-step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--light-color);
+        }
+
+        .route-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Nearby Attractions */
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .attraction-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .attraction-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .attraction-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .attraction-content {
+            padding: 1.5rem;
+        }
+
+        .attraction-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .distance {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Page Navigation */
+        .page-navigation {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-icon i {
+                font-size: 6rem;
+            }
+            
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 200px;
+                text-align: center;
+            }
+            
+            .menu-hero h1, .about-hero h1, .gallery-hero h1, .location-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .category-tabs, .filter-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .map-overlay {
+                position: relative;
+                top: 0;
+                left: 0;
+                max-width: 100%;
+                margin: 1rem;
+            }
+            
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 3rem 0;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .transport-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .attractions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .lightbox-content {
+                max-width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#beranda" class="logo">Soto Tauco Talang</a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#beranda" class="active">Beranda</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#lokasi">Lokasi</a></li>
+                <li><a href="#testimoni">Hasil Karya</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BERANDA -->
+    <div id="beranda" class="page-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Keistimewaan Rasa Tauco dari Tegal</h1>
+                <p>Nikmati soto tauco autentik dengan rempah segar yang kaya cita rasa tradisional Tegal.</p>
+                <div class="hero-buttons">
+                </div>
+            </div>
+        </section>
+           
+        </section>
+    </div>
+
+    <!-- TENTANG -->
+    <div id="tentang" class="page-content" style="display: none;">
+        <!-- About Hero -->
+        <section class="about-hero">
+            <div class="container">
+                <h1>Tentang Soto Tauco Talang</h1>
+                <p>Menjaga warisan kuliner Tegal sejak 1985</p>
+            </div>
+        </section>
+
+        <!-- Tentang -->
+        <section class="history">
+            <div class="container">
+                <div class="history-content">
+                    <div class="history-text">
+                        <h2>Pengertian Soto Tauco</h2>
+<p>Soto Tauco atau sering disebut juga Sauto adalah salah satu varian soto khas Indonesia yang berasal dari Tegal, Jawa Tengah. Ciri khas utama soto ini adalah penggunaan tauco sebagai salah satu bumbu atau pelengkap utamanya. Tauco adalah bumbu fermentasi dari kedelai yang memberikan sensasi rasa yang unik dan kompleks pada kuah soto, yaitu perpaduan antara manis, asam, dan asin dengan aroma yang khas, membedakannya dari soto pada umumnya yang lebih dominan rasa gurih bawang. Isian soto tauco umumnya terdiri dari nasi atau lontong, tauge, daun bawang, bawang goreng, dan pilihan lauk berupa suwiran daging ayam, daging sapi, atau babat/jeroan rebus. Kuahnya biasanya memiliki warna agak kecokelatan karena pengaruh bumbu tauco.</p>
+                        <h2>Asal Soto Tauco</h2> 
+                        <P>Soto Tauco berasal dari Kota Tegal, Jawa Tengah.Asal-usul: Kuliner ini diyakini merupakan hasil akulturasi budaya Jawa dengan Tiongkok. Tauco sendiri adalah bumbu hasil fermentasi kedelai yang konon dibawa oleh pendatang atau pedagang dari Tiongkok. Di Tegal, penggunaan tauco ini diadaptasi ke dalam hidangan soto lokal, menciptakan cita rasa baru yang unik.Sejarah: Soto tauco sudah dikenal di Tegal lebih dari 180 tahun yang lalu.Penamaan: Nama "Sauto" sering digunakan sebagai singkatan dari Soto dan Tauco.Lokasi Populer: Salah satu tempat yang terkenal dengan soto tauco-nya di Tegal adalah di kawasan Pasar Senggol dekat Alun-alun Kota Tegal.</p>
+                        <h2>Jenis-jenis Soto Tauco</h2>
+                        <p>Jenis-jenis Soto Tauco biasanya dibedakan berdasarkan isian lauk utamanya, yaitu:Soto Tauco Ayam: Menggunakan suwiran daging ayam sebagai lauk utama. Ini adalah salah satu jenis yang paling umum.Soto Tauco Babat: Menggunakan potongan babat (jeroan sapi) rebus atau goreng sebagai lauk utama. Babat memberikan tekstur kenyal yang khas.Soto Tauco Daging Sapi: Menggunakan potongan daging sapi atau sandung lamur sebagai lauk utama, yang memberikan kekayaan rasa pada kaldu.Variasi Lain: Terkadang juga ditambahkan isian lain seperti usus ayam bumbu kuning yang digoreng kering.Secara umum, kuah dan bumbu tauconya tetap menjadi ciri khas utama, hanya isian lauknya saja yang bervariasi.</p>
+                    </div>
+                    <div class="history-image">
+                        <img src="https://images.unsplash.com/photo-1511910849309-0dffb8785146?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sejarah Soto Tauco Talang">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Tim -->
+        <section class="team">
+            <div class="container">
+                <h2>Cara Pembuatan</h2>
+                <p>jdsbfjsf</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- MENU -->
+    <div id="menu" class="page-content" style="display: none;">
+        <!-- Menu Hero -->
+        <section class="menu-hero">
+            <div class="container">
+                <h1>Menu Spesial Kami</h1>
+                <p>Nikmati keautentikan rasa soto tauco dengan berbagai pilihan terbaik</p>
+            </div>
+        </section>
+
+        <!-- Menu Categories -->
+        <section class="menu-categories">
+            <div class="container">
+                <div class="category-tabs">
+                    <div class="category-tab active" data-category="all">Semua Menu</div>
+                    <div class="category-tab" data-category="soto">Soto Tauco</div>
+                    <div class="category-tab" data-category="minuman">Minuman</div>
+                    <div class="category-tab" data-category="tambahan">Tambahan</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Menu -->
+        <section class="menu">
+            <div class="container">
+                <h2>Menu Soto Tauco</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="soto">
+                        <img src="sotokomplit.jpg.jpg" alt="Soto Tauco Komplit">
+                        <div class="menu-item-content">
+                            <h3>Soto Tauco Komplit</h3>
+                            <p>Daging sapi, jeroan, tauge, seledri, dan tauco autentik dengan kuah kaldu sapi yang gurih.</p>
+                            <span class="price">Rp 25.000</span>
+                            <a href="https://wa.me/6281234567890?text=Saya%20ingin%20memesan%20Soto%20Tauco%20Komplit" class="order-btn" target="_blank">Pesan via WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="soto">
+                        <img src="sotodaging.jpg" alt="Soto Tauco Daging">
+                        <div class="menu-item-content">
+                            <h3>Soto Tauco Daging</h3>
+                            <p>Fokus pada daging empuk dengan kuah kaya rempah dan aroma tauco yang khas.</p>
+                            <span class="price">Rp 22.000</span>
+                            <a href="https://wa.me/6281234567890?text=Saya%20ingin%20memesan%20Soto%20Tauco%20Daging" class="order-btn" target="_blank">Pesan via WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="soto">
+                        <img src="sotoayam.jpg" alt="Soto Tauco Ayam">
+                        <div class="menu-item-content">
+                            <h3>Soto Tauco Ayam</h3>
+                            <p>Varian ayam segar untuk pilihan ringan dengan cita rasa tauco yang tetap autentik.</p>
+                            <span class="price">Rp 20.000</span>
+                            <a href="https://wa.me/6281234567890?text=Saya%20ingin%20memesan%20Soto%20Tauco%20Ayam" class="order-btn" target="_blank">Pesan via WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="soto">
+                        <img src="sotospesial.jpg" alt="Soto Tauco Spesial">
+                        <div class="menu-item-content">
+                            <h3>Soto Tauco Spesial</h3>
+                            <p>Paket lengkap dengan nasi, kerupuk, sambal, dan es teh manis.</p>
+                            <span class="price">Rp 28.000</span>
+                            <a href="https://wa.me/6281234567890?text=Saya%20ingin%20memesan%20Soto%20Tauco%20Spesial" class="order-btn" target="_blank">Pesan via WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="tambahan">
+                        <img src="kerupuk.jpg" alt="Kerupuk">
+                        <div class="menu-item-content">
+                            <h3>Kerupuk Tambahan</h3>
+                            <p>Kerupuk udang sebagai pelengkap soto.</p>
+                            <span class="price">Rp 3.000</span>
+                            <a href="https://wa.me/6281234567890?text=Saya%20ingin%20memesan%20Kerupuk%20Tambahan" class="order-btn" target="_blank">Pesan via WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="tambahan">
+                        <img src="nasiputih.jpg" alt="Nasi Putih">
+                        <div class="menu-item-content">
+                            <h3>Nasi Putih</h3>
+                            <p>Nasi pulen hangat sebagai pendamping soto.</p>
+                            <span class="price">Rp 4.000</span>
+                            <a href="https://wa.me/6281234567890?text=Saya%20ingin%20memesan%20Nasi%20Putih" class="order-btn" target="_blank">Pesan via WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="minuman">
+                        <img src="esteh.jpg" alt="Es Teh Manis">
+                        <div class="menu-item-content">
+                            <h3>Es Teh Manis</h3>
+                            <p>Minuman segar pendamping soto yang menyegarkan.</p>
+                            <span class="price">Rp 5.000</span>
+                            <a href="https://wa.me/6281234567890?text=Saya%20ingin%20memesan%20Es%20Teh%20Manis" class="order-btn" target="_blank">Pesan via WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="minuman">
+                        <img src="tehhangat.jpg" alt="Jeruk Hangat">
+                        <div class="menu-item-content">
+                            <h3>Teh Hangat</h3>
+                            <p>Minuman hangat bikin tubuh terasa nyaman.</p>
+                            <span class="price">Rp 8.000</span>
+                            <a href="https://wa.me/6281234567890?text=Saya%20ingin%20memesan%20Jeruk%20Hangat" class="order-btn" target="_blank">Pesan via WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="minuman">
+                        <img src="esjeruk.jpg" alt="Nasi Putih">
+                        <div class="menu-item-content">
+                            <h3>Es Jeruk</h3>
+                            <p>Nasi pulen hangat sebagai pendamping soto.</p>
+                            <span class="price">Rp 4.000</span>
+                            <a href="https://wa.me/6281234567890?text=Saya%20ingin%20memesan%20Nasi%20Putih" class="order-btn" target="_blank">Pesan via WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- GALERI -->
+    <div id="galeri" class="page-content" style="display: none;">
+        <!-- Gallery Hero -->
+        <section class="gallery-hero">
+            <div class="container">
+                <h1>Galeri Soto Tauco Talang</h1>
+                <p>Lihat keindahan cita rasa melalui koleksi foto dan video kami</p>
+            </div>
+        </section>
+
+        <!-- Gallery Filter -->
+        <section class="gallery-filter">
+            <div class="container">
+                <div class="filter-tabs">
+                    <div class="filter-tab active" data-filter="all">Semua</div>
+                    <div class="filter-tab" data-filter="makanan">Makanan</div>
+                    <div class="filter-tab" data-filter="proses">Proses</div>
+                    <div class="filter-tab" data-filter="tempat">Tempat</div>
+                    <div class="filter-tab" data-filter="acara">Acara</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Gallery -->
+        <section class="gallery-main">
+            <div class="container">
+                <h2>Koleksi Foto</h2>
+                <div class="gallery-grid">
+                    <!-- Makanan -->
+                    <div class="gallery-item" data-category="makanan">
+                        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Soto Tauco Komplit">
+                        <div class="gallery-overlay">
+                            <h3>Soto Tauco Komplit</h3>
+                            <p>Hidangan spesial dengan daging sapi empuk dan tauco autentik</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="makanan">
+                        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Soto Tauco Daging">
+                        <div class="gallery-overlay">
+                            <h3>Soto Tauco Daging</h3>
+                            <p>Fokus pada keempukan daging sapi pilihan</p>
+                        </div>
+                    </div>
+
+                    <!-- Proses -->
+                    <div class="gallery-item" data-category="proses">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03246963d96f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Proses Pembuatan Tauco">
+                        <div class="gallery-overlay">
+                            <h3>Proses Fermentasi Tauco</h3>
+                            <p>Tauco dibuat dengan proses tradisional yang teliti</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="proses">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Memasak Soto">
+                        <div class="gallery-overlay">
+                            <h3>Memasak Kuah Soto</h3>
+                            <p>Kuah dimasak dengan api kecil selama berjam-jam</p>
+                        </div>
+                    </div>
+
+                    <!-- Tempat -->
+                    <div class="gallery-item" data-category="tempat">
+                        <img src="https://images.unsplash.com/photo-1511910849309-0dffb8785146?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Suasana Restoran">
+                        <div class="gallery-overlay">
+                            <h3>Suasana Restoran</h3>
+                            <p>Tempat yang nyaman untuk menikmati soto tauco</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="tempat">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Area Makan">
+                        <div class="gallery-overlay">
+                            <h3>Area Makan</h3>
+                            <p>Ruang makan yang bersih dan nyaman</p>
+                        </div>
+                    </div>
+
+                    <!-- Acara -->
+                    <div class="gallery-item" data-category="acara">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Acara Keluarga">
+                        <div class="gallery-overlay">
+                            <h3>Acara Keluarga</h3>
+                            <p>Tempat favorit untuk berkumpul bersama keluarga</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="acara">
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Wisata Kuliner">
+                        <div class="gallery-overlay">
+                            <h3>Wisata Kuliner</h3>
+                            <p>Destinasi wajib bagi pecinta kuliner Tegal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="video-section">
+            <div class="container">
+                <h2>Video Soto Tauco Talang</h2>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="video-content">
+                            <h3>Proses Pembuatan Tauco Tradisional</h3>
+                            <p>Lihat bagaimana tauco dibuat dengan cara tradisional yang telah turun-temurun</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- LOKASI -->
+    <div id="lokasi" class="page-content" style="display: none;">
+        <!-- Location Hero -->
+        <section class="location-hero">
+            <div class="container">
+                <h1>Lokasi & Kontak</h1>
+                <p>Temukan kami dengan mudah dan nikmati pengalaman kuliner terbaik</p>
+            </div>
+        </section>
+
+        <!-- Location Info -->
+        <section class="location-info">
+            <div class="container">
+                <div class="location-content">
+                    <div class="info-column">
+                        <!-- Alamat & Kontak -->
+                        <div class="info-card">
+                            <h3><i class="fas fa-map-marker-alt"></i> Alamat</h3>
+                            <p>Jl. Talang No. 123, Kelurahan Talang, Kecamatan Tegal Timur<br>
+                            Kota Tegal, Jawa Tengah 52121</p>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Telepon</strong>
+                                    <p>(0823) 777777</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-whatsapp"></i>
+                                <div>
+                                    <strong>WhatsApp</strong>
+                                    <p>+62 812-3456-7890</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p>info@sototaucotalang.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jam Operasional -->
+                        <div class="info-card">
+                            <h3><i class="fas fa-clock"></i> Jam Operasional</h3>
+                            <div class="hours-grid">
+                                <div class="hour-item">
+                                    <span>Senin - Kamis</span>
+                                    <span>08:00 - 21:00</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span>Jumat</span>
+                                    <span>08:00 - 21:30</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span>Sabtu - Minggu</span>
+                                    <span>07:30 - 22:00</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span>Hari Libur</span>
+                                    <span>07:30 - 22:30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-column">
+                        <!-- Fasilitas -->
+                        <div class="info-card">
+                            <h3><i class="fas fa-concierge-bell"></i> Fasilitas</h3>
+                            <div class="facilities-grid">
+                                <div class="facility-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <p>Free WiFi</p>
+                                </div>
+                                <div class="facility-item">
+                                    <i class="fas fa-car"></i>
+                                    <p>Parkir Luas</p>
+                                </div>
+                                <div class="facility-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <p>Area Makan</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Layanan -->
+                        <div class="info-card">
+                            <h3><i class="fas fa-shipping-fast"></i> Layanan</h3>
+                            <div class="facilities-grid">
+                                <div class="facility-item">
+                                    <i class="fas fa-store"></i>
+                                    <p>Dine-in</p>
+                                </div>
+                                <div class="facility-item">
+                                    <i class="fas fa-truck"></i>
+                                    <p>Take Away</p>
+                                </div>
+                                <div class="facility-item">
+                                    <i class="fas fa-credit-card"></i>
+                                    <p>Digital Payment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d428.5291944063527!2d109.13431077124363!3d-6.912243825215348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb906cb0446ff%3A0x818a472f29d4953f!2sWarung%20Soto%20Sedap%20Malam%20Putri!5e0!3m2!1sid!2sid!4v1761235774487!5m2!1sid!2sid" 
+                    class="map" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+        </section>
+
+
+        <!-- Nearby Attractions -->
+        <section class="attractions">
+            <div class="container">
+                <h2>Tempat Menarik di Sekitar</h2>
+                <div class="attractions-grid">
+                    <div class="attraction-card">
+                        <img src="https://images.unsplash.com/photo-159889459 giliran-unsplash" alt="Pasar Pagi Tegal">
+                        <div class="attraction-content">
+                            <h3>Pasar Pagi Tegal</h3>
+                            <p class="distance">± 500 meter</p>
+                            <p>Pasar tradisional dengan berbagai kebutuhan sehari-hari</p>
+                        </div>
+                    </div>
+                    <div class="attraction-card">
+                        <img src="https://images.unsplash.com/photo-1562602830-7a7eb1bae2a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Alun-alun Tegal">
+                        <div class="attraction-content">
+                            <h3>Alun-alun Tegal</h3>
+                            <p class="distance">± 2 km</p>
+                            <p>Pusat kota dengan taman yang asri dan berbagai kuliner</p>
+                        </div>
+                    </div>
+                    <div class="attraction-card">
+                        <img src="https://images.unsplash.com/photo-1592409065737-2535c2466a73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pantai Alam Indah">
+                        <div class="attraction-content">
+                            <h3>Pantai Alam Indah</h3>
+                            <p class="distance">± 5 km</p>
+                            <p>Pantai dengan pemandangan laut Jawa yang menawan</p>
+                        </div>
+                    </div>
+                    <div class="attraction-card">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tegal Mall">
+                        <div class="attraction-content">
+                            <h3>Tegal Mall</h3>
+                            <p class="distance">± 3 km</p>
+                            <p>Pusat perbelanjaan modern dengan berbagai brand ternama</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- TESTIMONI -->
+    <div id="testimoni" class="page-content" style="display: none;">
+        <!-- Testimoni Hero -->
+        <section class="about-hero">
+            <div class="container">
+                <h1>Hasil Karya</h1>
+                <p>Berisi foto saat wawancara</p>
+            </div>
+        </section>
+
+        <!-- Testimoni Utama -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>Anggota Kelompok</h2>
+                <div>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pelanggan 1" class="avatar">
+                        <p>"Rasa tauconya autentik banget! Wajib dicoba saat ke Tegal. Kuahnya gurih dan dagingnya empuk. Sudah langganan sejak 2010!"</p>
+                        <h4>- Andi S.</h4>
+                        <p><small>Pelanggan Setia</small></p>
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Pelanggan 2" class="avatar">
+                        <p>"Kuahnya segar dan hangat, bikin kangen terus. Tempatnya juga bersih dan nyaman. Pelayannya ramah-ramah sekali."</p>
+                        <h4>- Sari W.</h4>
+                        <p><small>Wisatawan dari Jakarta</small></p>
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Pelanggan 3" class="avatar">
+                        <p>"Porsi besar, harga ramah. Rekomendasi untuk keluarga. Anak-anak juga suka! Lokasinya strategis dan mudah dicari."</p>
+                        <h4>- Budi K.</h4>
+                        <p><small>Keluarga dengan 2 anak</small></p>
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Pelanggan 4" class="avatar">
+                        <p>"Cita rasa yang konsisten dari dulu sampai sekarang. Tauconya benar-benar khas Tegal. Tempat wajib buat nostalgia."</p>
+                        <h4>- Rina M.</h4>
+                        <p><small>Warga Tegal asli</small></p>
+                    </div>
+                </div>
+                 </div>
+        </section>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img">
+            <div class="lightbox-nav">
+                <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Soto Tauco Talang Tegal. Semua hak dilindungi.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com/sototaucotalang" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/sototaucotalang" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Navigation System
+        const navigationLinks = document.querySelectorAll('.nav-links a');
+        const pageContents = document.querySelectorAll('.page-content');
+
+        function showPage(pageId) {
+            // Hide all pages
+            pageContents.forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.style.display = 'block';
+            }
+            
+            // Update active nav link
+            navigationLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${pageId}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Close mobile menu
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Add click event to navigation links
+        navigationLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('href').substring(1);
+                showPage(pageId);
+            });
+        });
+
+        // Show beranda by default
+        showPage('beranda');
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Header background on scroll
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Category Tabs for Menu Page
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        if (categoryTabs.length > 0) {
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+
+                    const category = tab.getAttribute('data-category');
+
+                    // Show/hide menu items based on category
+                    menuItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Gallery Filter
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        if (filterTabs.length > 0) {
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+
+                    const filter = tab.getAttribute('data-filter');
+
+                    // Show/hide gallery items based on filter
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Lightbox Functionality
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const lightboxPrev = document.querySelector('.lightbox-prev');
+        const lightboxNext = document.querySelector('.lightbox-next');
+        const lightboxCaption = document.querySelector('.lightbox-caption');
+
+        if (lightbox) {
+            let currentImageIndex = 0;
+            const galleryImages = Array.from(galleryItems);
+
+            // Open lightbox when clicking on gallery item
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    const title = item.querySelector('h3').textContent;
+                    const description = item.querySelector('p').textContent;
+                    
+                    lightboxImg.src = img.src;
+                    lightboxCaption.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+                    currentImageIndex = index;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close lightbox
+            lightboxClose.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Navigation in lightbox
+            lightboxPrev.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+                updateLightboxImage();
+            });
+
+            lightboxNext.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                updateLightboxImage();
+            });
+
+            function updateLightboxImage() {
+                const item = galleryImages[currentImageIndex];
+                const img = item.querySelector('img');
+                const title = item.querySelector('h3').textContent;
+                const description = item.querySelector('p').textContent;
+                
+                lightboxImg.src = img.src;
+                lightboxCaption.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+            }
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                
+                if (e.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                } else if (e.key === 'ArrowLeft') {
+                    lightboxPrev.click();
+                } else if (e.key === 'ArrowRight') {
+                    lightboxNext.click();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
